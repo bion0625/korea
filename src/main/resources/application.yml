@@ -1,0 +1,38 @@
+server: 
+  port: 8080
+ 
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp 
+
+---
+
+spring:
+  profiles: local
+  
+  devtools:
+    livereload:
+      enabled: true
+      
+  datasource:
+    hikari:
+      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://localhost:3306/korea?characterEncoding=UTF-8&serverTimezone=UTC
+      username: root
+      password: ischus7156#
+
+--- 
+
+spring:
+  profiles: prd
+
+  datasource:
+    hikari:
+      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://localhost:3306/korea?characterEncoding=UTF-8&serverTimezone=UTC
+      username: root
+      password: ischus7156#
+
+     

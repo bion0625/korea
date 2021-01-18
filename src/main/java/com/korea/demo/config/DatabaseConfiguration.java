@@ -66,8 +66,9 @@ public class DatabaseConfiguration {
     }
 	
 	/**
-	 * myBatis 는 JdbcTemplate 대신 Connection 객체를 통한 질의를 위해서 SqlSession을 사용한다. 
-	 * 내부적으로 SqlSessionTemplate가 SqlSession을 구현하게 되는데, Thread 에서 안전하고 여러개의 Mapper에서 공유할수 있다.
+	 * mybatis
+	 * SqlSessionFactory : 데이터베이스의 연결과 SQL 실행에 대한 정보를 가진 객체
+	 * 이 객체가 DataSource 를 참조하여 mybatis 와 DB를 연동
 	 * @param dataSource
 	 * @return
 	 * @throws Exception
@@ -83,8 +84,11 @@ public class DatabaseConfiguration {
 	}
 	
 	/**
-	 * SqlSessionTemplate 은 SqlSession 을 구현하고 코드에서 Session 를 대체하는 역할
+	 * mybatis
+	 * SqlSessionTemplate : SqlSession 을 구현하고 코드에서 Session 를 대체하는 역할
 	 * Thread safe 하게 작성되어  되었다.
+	 * SqlSession 으로 작성하면 쿼리문을 수행하는 PreparedStatement 를 직접 생성하여 실행해야 하는데, mybatis 를 사용하면 해당 기능이 내부적으로 자동 처리 된다. 
+	 * 
 	 * @param factory
 	 * @return
 	 */

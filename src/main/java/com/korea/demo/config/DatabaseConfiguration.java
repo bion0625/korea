@@ -59,11 +59,12 @@ public class DatabaseConfiguration {
 	 */
 	@Bean
     public PlatformTransactionManager transactionManager(DataSource dataSource) {
+		System.out.println("트랜잭션 매니저 등록");
         return new DataSourceTransactionManager(dataSource);
     }
 	
 	/**
-	 * 	myBatis 는 JdbcTemplate 대신 Connection 객체를 통한 질의를 위해서 SqlSession을 사용한다. 
+	 * myBatis 는 JdbcTemplate 대신 Connection 객체를 통한 질의를 위해서 SqlSession을 사용한다. 
 	 * 내부적으로 SqlSessionTemplate가 SqlSession을 구현하게 되는데, Thread 에서 안전하고 여러개의 Mapper에서 공유할수 있다.
 	 * @param dataSource
 	 * @return
@@ -71,6 +72,7 @@ public class DatabaseConfiguration {
 	 */
 	@Bean
 	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+		System.out.println("세션 팩토리 등록");
 		PathMatchingResourcePatternResolver patternResolver = new PathMatchingResourcePatternResolver();
 		SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
 		factoryBean.setDataSource(dataSource);
@@ -86,6 +88,7 @@ public class DatabaseConfiguration {
 	 */
 	@Bean
 	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory factory) {
+		System.out.println("세션 템플릿 등록");
 		return new SqlSessionTemplate(factory);
 	}
 	

@@ -54,6 +54,8 @@ public class DatabaseConfiguration {
 	
 	/**
 	 * 트랜잭션 매니저 등록
+	 * 트랜잭션 : 더 이상 쪼갤 수 없는 최소 단위의 작업이다. 
+	 * 여러 단계의 작업이 처리될 경우 전체 로직이 모두 다 성공 commit / 실패 rollback 해야되는 논리적인 작업의 묶음을 의미
 	 * @param dataSource
 	 * @return
 	 */

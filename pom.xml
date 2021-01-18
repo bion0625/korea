@@ -106,17 +106,8 @@
 		<dependency>
 			<groupId>com.zaxxer</groupId>
 			<artifactId>HikariCP</artifactId>
-			<version>3.4.5</version>
+			<version>3.4.5</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
-
-		<!-- hikaricp -->
-		<!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
-		<dependency>
-			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-			<version>3.4.5</version>
-		</dependency>
-
 
 		<!-- mybatis -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
